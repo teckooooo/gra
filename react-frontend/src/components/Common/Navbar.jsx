@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav style={styles.navbar}>
       <div style={styles.container}>
-        <span style={styles.logo}>📊 PowerBI App</span>
+        <span style={styles.logo}>Gestor de Reportes Automático </span>
         <ul style={styles.navItems}>
           <li><Link to="/dashboard" style={styles.link}>Dashboard</Link></li>
           <li><Link to="/comercial" style={styles.link}>Comercial</Link></li>

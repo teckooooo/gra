@@ -7,23 +7,19 @@ import ComercialPage from './pages/ComercialPage';
 import GrillaCanalPage from './pages/GrillaCanalPage';
 
 import Navbar from './components/Common/Navbar';
-import Sidebar from './components/Common/Sidebar';
 
 export default function App() {
   return (
     <Router>
       <div style={styles.appContainer}>
-        <Sidebar />
-        <div style={styles.contentContainer}>
-          <Navbar />
-          <div style={styles.pageContent}>
-            <Routes>
-              <Route path="/" element={<LoginPage />} />
-              <Route path="/dashboard" element={<DashboardPage />} />
-              <Route path="/comercial" element={<ComercialPage />} />
-              <Route path="/grilla" element={<GrillaCanalPage />} />
-            </Routes>
-          </div>
+        <Navbar />
+        <div style={styles.pageContent}>
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/comercial" element={<ComercialPage />} />
+            <Route path="/grilla" element={<GrillaCanalPage />} />
+          </Routes>
         </div>
       </div>
     </Router>
@@ -33,12 +29,10 @@ export default function App() {
 const styles = {
   appContainer: {
     display: 'flex',
-  },
-  contentContainer: {
-    flex: 1,
-    marginLeft: '220px', // Espacio reservado para el sidebar
+    flexDirection: 'column',
   },
   pageContent: {
     padding: '1rem',
+    width: '100%',
   },
 };
