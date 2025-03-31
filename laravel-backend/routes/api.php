@@ -9,22 +9,25 @@ use App\Http\Controllers\GrillaCanalController;
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
-// Rutas protegidas por Sanctum
+// 🔒 Rutas protegidas con middleware 'auth:sanctum'
 Route::middleware('auth:sanctum')->group(function () {
-    
-    // Ventas
+
+    // ✅ Módulo de Ventas
     Route::get('/ventas', [ComercialController::class, 'ventas']);
     Route::post('/ventas', [ComercialController::class, 'crearVenta']);
-    
-    // Contratos
+
+    // ✅ Módulo de Contratos
     Route::get('/contratos', [ComercialController::class, 'contratos']);
     Route::post('/contratos', [ComercialController::class, 'crearContrato']);
-    
-    // Postventa
+
+    // ✅ Módulo de Postventa
     Route::get('/postventa', [ComercialController::class, 'postventa']);
     Route::post('/postventa', [ComercialController::class, 'crearPostventa']);
 
-    // Grillas (TVRED y CableColor)
+    // ✅ Grilla de canales (TVRED y CableColor)
     Route::get('/grillas/tvred', [GrillaCanalController::class, 'tvred']);
     Route::get('/grillas/cablecolor', [GrillaCanalController::class, 'cablecolor']);
+
+    // 🚪 Logout
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
